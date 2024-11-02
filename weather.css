@@ -1,0 +1,25 @@
+.header {
+    width: 100%;
+    text-align: center;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 844px;
+    width: 390px;
+    align-items: center;
+}
+
+.hour-weather {
+    height: 10%;
+    width: 100%;
+    background-color: aquamarine;
+}
+
+.day-weather {
+    background-color: antiquewhite;
+    width: 70%;
+    height: 70%;
+
+}
