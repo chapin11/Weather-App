@@ -1,25 +1,87 @@
+html {
+    height: 844px;
+    width: 390px;
+}
+
 .header {
     width: 100%;
     text-align: center;
+    color: #f8efed;
+    margin-top: 10px;
+    padding: 10px;
+    
 }
 
 .wrapper {
     display: flex;
     flex-direction: column;
-    height: 844px;
-    width: 390px;
     align-items: center;
+    width: 100%;
+    height: 844px;
+    background-color: #123c58;
+    justify-content: space-evenly;
 }
 
 .hour-weather {
-    height: 10%;
-    width: 100%;
-    background-color: aquamarine;
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    width: 85%;
+    background-color: #156d95;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 .day-weather {
-    background-color: antiquewhite;
-    width: 70%;
-    height: 70%;
+    background-color: #156d95;
+    width: 85%;
+    height: 50%;
+}
+.bl {
+    min-width: 70px;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    word-break: break-all
 
+}
+.bl img {
+    width: 35px;
+}
+
+.img-block {
+    width: 35px;
+    height: 35px;
+
+}
+.Rain {
+    background-image: url(./img/icons8-дождь-48.png) ;
+    background-size: 35px;
+}
+.Clouds {
+    background-image: url(./img/icons8-облака-48.png) ;
+    background-size: 35px;
+}
+.Clear {
+    background-image: url(./img/icons8-солнце-48.png) ;
+    background-size: 35px;
+}
+.Snow {
+    background-image: url(./img/icons8-зима-48.png) ;
+    background-size: 35px;
+}
+.night {
+    background-image: url(./img/icons8-яркая-луна-48.png) ;
+    background-size: 35px;
+}
+.day {
+    background-image: url(./img/icons8-солнце-48.png) ;
+    background-size: 35px;
+}
+
+.weather-block {
+    border-radius: 20px;
+    border: 2px solid #20abd8;
 }
