@@ -62,6 +62,12 @@ html {
     min-height: 10%;
     color:#e7eaf6;
     font-size: 20px;
+    overflow: hidden;
+}
+.hour-day {
+    display: flex;
+    flex-direction: column;
+    
 }
 .bl {
     user-select: none;
@@ -133,3 +139,177 @@ html {
                       color-stop(.5, rgba(34, 60, 80, 0.2)),
                       color-stop(.5, transparent), to(right));
   }
+
+  /* Стили для раскрывающихся дней */
+/* Стили для раскрывающихся дней */
+.day-header {
+  padding: 12px 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid #a2a8d3;
+  min-height: 50px;
+  box-sizing: border-box;
+}
+
+.day-header:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.day-main-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.day-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e7eaf6;
+  margin-bottom: 4px;
+}
+
+.day-temp-range {
+  font-size: 14px;
+  color: #a2a8d3;
+}
+
+.day-arrow {
+  font-size: 12px;
+  color: #a2a8d3;
+  transition: transform 0.3s ease;
+  margin-left: 10px;
+}
+
+.hourly-forecast {
+  display: none;
+  background-color: rgba(26, 123, 168, 0.3);
+  border-top: 1px solid #1a7ba8;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Стили для скролла почасового прогноза */
+.hourly-forecast::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 30px;
+}
+
+.hourly-forecast::-webkit-scrollbar-track {
+  border-radius: 30px;
+  background-color: rgba(18, 60, 88, 0.3);
+}
+
+.hourly-forecast::-webkit-scrollbar-thumb {
+  border-radius: 30px;
+  background-color: #356184;
+}
+
+.hour-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(162, 168, 211, 0.3);
+  font-size: 14px;
+  min-height: 44px;
+  box-sizing: border-box;
+}
+
+.hour-item:last-child {
+  border-bottom: none;
+}
+
+.hour-time {
+  width: 50px;
+  color: #e7eaf6;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.hour-weather-icon {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  margin: 0 10px;
+}
+
+.hour-weather-icon .img-block {
+  width: 25px;
+  height: 25px;
+  background-size: 25px;
+}
+
+.hour-temp {
+  width: 40px;
+  text-align: center;
+  color: #e7eaf6;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.hour-desc {
+  flex: 1;
+  text-align: right;
+  color: #a2a8d3;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+/* Анимация для плавного раскрытия */
+.day-block {
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid #a2a8d3;
+  overflow: hidden;
+}
+
+/* Убедимся, что контейнер day-weather правильно скроллится */
+.day-weather {
+  text-indent: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #156d95;
+  width: 85%;
+  height: 50%;
+  overflow-y: auto;
+}
+
+.day-weather .day-block {
+  flex-shrink: 0;
+}
+
+/* Адаптивность для мобильных устройств */
+@media screen and (max-width: 480px) {
+  .hour-item {
+    font-size: 12px;
+    padding: 8px 10px;
+    min-height: 40px;
+  }
+  
+  .hour-desc {
+    font-size: 11px;
+  }
+  
+  .day-name {
+    font-size: 16px;
+  }
+  
+  .day-temp-range {
+    font-size: 13px;
+  }
+  
+  .hourly-forecast {
+    max-height: 200px;
+  }
+}
+
+/* Убираем отступы у hr элементов в почасовом прогнозе */
+.hour-weather hr {
+  margin: 0;
+  border: none;
+  height: 1px;
+  background-color: #20abd8;
+}
